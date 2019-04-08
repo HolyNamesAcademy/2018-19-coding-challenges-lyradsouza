@@ -23,25 +23,43 @@ public class NumberTwo {
      */
     public boolean evenlySpaced(int a, int b, int c) {
 
-        //put them in order then test
-
-        
-
-
-
-        if (Math.abs(b-a) == Math.abs(b-c)){
-                return true;
-
+        int small, med, large;
+        if(a>=b && a>=c) {
+            large = a;
+            if(b>c) {
+                med = b;
+                small = c;
+            }
+            else{
+                med=c;
+                small=b;
+            }
+        }
+        else  if(b>=a && b>=c) {
+            large = b;
+            if (a > c) {
+                med = a;
+                small = c;
+            } else {
+                med = a;
+                small = b;
+            }
+        }
+        else{
+            large=c;
+            if(a>b) {
+                med = a;
+                small = b;
+            }
+            else{
+                med=b;
+                small=a;
+            }
         }
 
-        else if (Math.abs(a-b)==Math.abs(a-c)){
-                return true;
-
-
-        } else if (Math.abs(c-b) == Math.abs(c-a)) {
-                return true;
-            }
-
+        if(large-med==med-small) {
+            return true;
+        }
         return false;
 
     }
