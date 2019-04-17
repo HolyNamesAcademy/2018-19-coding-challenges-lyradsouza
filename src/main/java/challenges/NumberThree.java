@@ -28,7 +28,7 @@ public class NumberThree {
         int mil;
         if(s.substring(8)=="PM"){
             if(s.substring(0,2).equals("12")) {
-                time =s.substring(0, 8);
+                time=s.substring(0, 8);
             }
             else{
                 mil=Integer.parseInt(s.substring(0,2));
